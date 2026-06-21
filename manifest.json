@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Helper",
+  "version": "1.0.0",
+  "description": "Local-first PDF toolkit for Word conversion, merging, page edits, metadata, watermarking, and text extraction.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5174/*",
+    "http://localhost:5174/*"
+  ],
+  "action": {
+    "default_popup": "public/index.html",
+    "default_title": "PDF Helper"
+  },
+  "background": {
+    "service_worker": "extension/background.js"
+  },
+  "icons": {
+    "16": "extension/icons/icon16.svg",
+    "48": "extension/icons/icon48.svg",
+    "128": "extension/icons/icon128.svg"
+  }
+}

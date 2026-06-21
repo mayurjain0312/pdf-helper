@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF Helper</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">PDF</div>
+          <div>
+            <h1>PDF Helper</h1>
+            <p>Local document tools for fast PDF work.</p>
+          </div>
+        </div>
+        <div id="engineState" class="engine checking">
+          <span></span>
+          <strong>Checking</strong>
+        </div>
+      </header>
+
+      <section class="quick-stats" aria-label="Capabilities">
+        <article>
+          <strong>7</strong>
+          <span>Tools</span>
+        </article>
+        <article>
+          <strong>Local</strong>
+          <span>Engine</span>
+        </article>
+        <article>
+          <strong>PDF</strong>
+          <span>Output</span>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <nav class="tool-grid" aria-label="PDF tools">
+          <button class="tool active" data-operation="convert-docx" type="button">
+            <span class="tool-icon">W</span>
+            <span><strong>Word to PDF</strong><small>DOCX conversion</small></span>
+          </button>
+          <button class="tool" data-operation="merge" type="button">
+            <span class="tool-icon">M</span>
+            <span><strong>Merge</strong><small>Join PDFs</small></span>
+          </button>
+          <button class="tool" data-operation="rotate" type="button">
+            <span class="tool-icon">R</span>
+            <span><strong>Rotate</strong><small>Page angles</small></span>
+          </button>
+          <button class="tool" data-operation="delete-pages" type="button">
+            <span class="tool-icon">D</span>
+            <span><strong>Delete</strong><small>Page ranges</small></span>
+          </button>
+          <button class="tool" data-operation="watermark" type="button">
+            <span class="tool-icon">T</span>
+            <span><strong>Watermark</strong><small>Text overlay</small></span>
+          </button>
+          <button class="tool" data-operation="metadata" type="button">
+            <span class="tool-icon">I</span>
+            <span><strong>Metadata</strong><small>Info fields</small></span>
+          </button>
+          <button class="tool" data-operation="extract-text" type="button">
+            <span class="tool-icon">X</span>
+            <span><strong>Extract</strong><small>PDF to text</small></span>
+          </button>
+        </nav>
+
+        <section class="task-panel">
+          <div class="task-head">
+            <div>
+              <p class="eyebrow">Selected Tool</p>
+              <h2 id="operationTitle">Word to PDF</h2>
+              <p id="operationHint">Upload one .docx file. LibreOffice must be installed for conversion.</p>
+            </div>
+          </div>
+
+          <form id="pdfForm">
+            <input id="operation" name="operation" type="hidden" value="convert-docx">
+
+            <label id="dropzone" class="dropzone" for="files">
+              <input id="files" name="files" type="file" multiple>
+              <span class="upload-icon" aria-hidden="true">+</span>
+              <strong>Drop files here or choose files</strong>
+              <small id="fileRequirement">Accepts .doc and .docx</small>
+            </label>
+
+            <div id="fileList" class="file-list" aria-live="polite"></div>
+            <div id="options" class="options"></div>
+
+            <button id="submitBtn" class="primary" type="submit">
+              <span>Run Tool</span>
+              <strong id="primaryLabel">Convert</strong>
+            </button>
+          </form>
+
+          <section class="result">
+            <div>
+              <p class="eyebrow">Result</p>
+              <h3 id="resultTitle">Ready</h3>
+            </div>
+            <pre id="status">Start the local helper, choose a tool, then process files.</pre>
+            <div class="actions">
+              <a id="download" class="download hidden" href="#">Download result</a>
+              <button id="copyLog" type="button">Copy log</button>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

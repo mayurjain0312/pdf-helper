@@ -1,0 +1,11 @@
+node_modules/
+dist/
+server/__pycache__/
+work/input/*
+work/output/*
+work/tmp/*
+!work/input/.gitkeep
+!work/output/.gitkeep
+!work/tmp/.gitkeep
+.DS_Store
+*.log
